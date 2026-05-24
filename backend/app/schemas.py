@@ -86,6 +86,9 @@ class AnalyticsResponse(BaseModel):
     total_users: int
     active_users: int
     total_interventions: int
+    pending_interventions: int
+    responded_interventions: int
+    accepted_interventions: int
     retention_rate: float
     total_revenue_at_risk: float
     total_revenue_saved: float

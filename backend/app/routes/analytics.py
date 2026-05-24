@@ -23,6 +23,11 @@ async def get_analytics(
         await db.scalar(select(func.count(User.id)).where(user_filter, User.status == "active"))
     ) or 0
     total_interventions = (await db.scalar(select(func.count(Intervention.id)).where(int_filter))) or 0
+    pending_interventions = (
+        await db.scalar(
+            select(func.count(Intervention.id)).where(int_filter, Intervention.outcome == "pending")
+        )
+    ) or 0
 
     total_responded = (
         await db.scalar(
@@ -128,6 +133,9 @@ async def get_analytics(
         total_users=total_users,
         active_users=active_users,
         total_interventions=total_interventions,
+        pending_interventions=pending_interventions,
+        responded_interventions=total_responded,
+        accepted_interventions=total_accepted,
         retention_rate=retention_rate,
         total_revenue_at_risk=total_revenue_at_risk,
         total_revenue_saved=total_revenue_saved,

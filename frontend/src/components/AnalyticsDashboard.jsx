@@ -40,6 +40,50 @@ function StatCard({ label, value, sub, accent }) {
   )
 }
 
+function RecentInterventions({ items = [] }) {
+  if (items.length === 0) {
+    return (
+      <div className="bg-slate-800 rounded-xl border border-slate-700 p-5">
+        <h3 className="text-sm font-semibold text-slate-300 mb-3">Recent Interventions</h3>
+        <p className="text-slate-500 text-sm">No interventions yet</p>
+      </div>
+    )
+  }
+
+  const outcomeStyle = {
+    pending: 'bg-amber-900/40 text-amber-300 border-amber-700/50',
+    accepted: 'bg-emerald-900/40 text-emerald-300 border-emerald-700/50',
+    rejected: 'bg-red-900/40 text-red-300 border-red-700/50',
+  }
+
+  return (
+    <div className="bg-slate-800 rounded-xl border border-slate-700 p-5">
+      <div className="flex items-center justify-between mb-3 gap-3">
+        <h3 className="text-sm font-semibold text-slate-300">Recent Interventions</h3>
+        <span className="text-xs text-slate-500">Pending shows up immediately after simulate</span>
+      </div>
+      <div className="space-y-2">
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="flex items-center justify-between gap-3 rounded-lg border border-slate-700/60 bg-slate-900/40 px-3 py-2"
+          >
+            <div className="min-w-0">
+              <p className="text-sm text-white truncate">{item.user_name}</p>
+              <p className="text-xs text-slate-400 truncate">
+                {item.segment.replace(/_/g, ' ')} · {item.offer_type.replace(/_/g, ' ')}
+              </p>
+            </div>
+            <span className={`shrink-0 rounded-full border px-2 py-0.5 text-xs capitalize ${outcomeStyle[item.outcome] || 'bg-slate-700 text-slate-300 border-slate-600'}`}>
+              {item.outcome}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function AnalyticsDashboard({ analytics, vertical }) {
   if (!analytics) {
     return (
@@ -81,12 +125,24 @@ export default function AnalyticsDashboard({ analytics, vertical }) {
   return (
     <div className="mb-6 space-y-4">
       {/* Stat cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 xl:grid-cols-6 gap-4">
         <StatCard
           label="Total Interventions"
           value={analytics.total_interventions}
           sub={`${analytics.total_users} users tracked`}
           accent="blue"
+        />
+        <StatCard
+          label="Pending"
+          value={analytics.pending_interventions}
+          sub="awaiting accept/reject"
+          accent="amber"
+        />
+        <StatCard
+          label="Responded"
+          value={analytics.responded_interventions}
+          sub={`${analytics.accepted_interventions} accepted`}
+          accent="purple"
         />
         <StatCard
           label="Retention Rate"
@@ -112,10 +168,15 @@ export default function AnalyticsDashboard({ analytics, vertical }) {
       <BanditInsights banditState={analytics.bandit_state} />
 
       {/* Charts */}
-      {(segmentData.length > 0 || offerData.length > 0) && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <RecentInterventions items={analytics.recent_interventions} />
+        {(segmentData.length > 0 || offerData.length > 0) && (
+          <>
           <div className="bg-slate-800 rounded-xl border border-slate-700 p-5">
             <h3 className="text-sm font-semibold text-slate-300 mb-4">Retention Rate by Segment</h3>
+            <p className="text-xs text-slate-500 mb-3">
+              These charts move after you accept or reject the offer. Pending cancels are tracked above.
+            </p>
             {segmentData.length === 0 ? (
               <p className="text-slate-500 text-sm text-center py-8">No interventions yet</p>
             ) : (
@@ -183,8 +244,9 @@ export default function AnalyticsDashboard({ analytics, vertical }) {
               </ResponsiveContainer>
             )}
           </div>
-        </div>
-      )}
+          </>
+        )}
+      </div>
     </div>
   )
 }

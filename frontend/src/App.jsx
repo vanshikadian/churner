@@ -60,8 +60,11 @@ export default function App() {
     try {
       const data = await api.cancelUser(user.id)
       setIntervention(data)
+      await loadData(user.vertical || vertical)
     } catch (e) {
       console.error('Cancel failed:', e)
+      setError(e.message || 'Failed to simulate cancellation.')
+      setModalOpen(false)
     } finally {
       setLoadingUserId(null)
     }

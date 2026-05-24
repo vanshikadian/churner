@@ -126,3 +126,13 @@ curl -X POST http://localhost:8000/api/seed
 ```
 
 Clears all users, events, interventions, and bandit stats, then re-seeds 500 fresh users.
+
+## Deploy
+
+For production deployment, use the production Docker files in this repo:
+
+```bash
+docker compose -f docker-compose.prod.yml up --build -d
+```
+
+Full guide: [DEPLOYMENT.md](/Users/vanshika/churner/DEPLOYMENT.md)
