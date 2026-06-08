@@ -5,6 +5,7 @@ import random
 from datetime import datetime
 
 from app.services.bandit import bandit
+from app.services.prompts import build_retention_prompt, RETENTION_MODEL, RETENTION_MAX_TOKENS
 
 
 async def generate_intervention(
@@ -38,23 +39,12 @@ async def _generate_message(user, features, segment, offer_type, offer_details, 
         try:
             from anthropic import Anthropic
             client = Anthropic(api_key=api_key)
-            safe_features = {k: v for k, v in features.items() if k != "weekly_trend"}
-            prompt = (
-                f"You are a retention specialist for a {vertical_config.display_name} subscription product. "
-                f"Write a short, warm, personalized retention message (2-3 sentences max).\n\n"
-                f"User context:\n"
-                f"- Name: {user.name}\n"
-                f"- Plan: {user.plan_tier} (${user.monthly_spend}/mo)\n"
-                f"- Segment: {segment}\n"
-                f"- Key signals: {json.dumps(safe_features, indent=2)}\n\n"
-                f"Offer: {offer_type}\n"
-                f"Details: {json.dumps(offer_details)}\n\n"
-                f"Be human and direct. Reference their specific situation. "
-                f"End with what they get if they stay. Do not use em dashes. Return ONLY the message text."
+            prompt = build_retention_prompt(
+                user, features, segment, offer_type, offer_details, vertical_config
             )
             response = client.messages.create(
-                model="claude-sonnet-4-20250514",
-                max_tokens=300,
+                model=RETENTION_MODEL,
+                max_tokens=RETENTION_MAX_TOKENS,
                 messages=[{"role": "user", "content": prompt}],
             )
             return response.content[0].text.strip(), "llm"

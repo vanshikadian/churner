@@ -1,0 +1,192 @@
+[
+  {
+    "vertical": "b2b_saas",
+    "segment": "price_sensitive",
+    "offer": "discount_30",
+    "message": "Hi Dana! I noticed you've been actively using our platform with recent logins, and I wanted to reach out about the payment issues you've experienced. To help make things easier, I'd like to offer you 30% off your Starter plan for the next 3 months, saving you $2.70 each month. If you stay with us, you'll keep all the features you're currently using plus continued access to our support team.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 5,
+      "within_length": false,
+      "char_len": 393
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 3,
+      "tone": 4,
+      "instruction_following": 4,
+      "rationale": "The message fabricates information about recent logins and payment issues that aren't mentioned in the context, significantly undermining its groundedness despite correctly stating the offer details."
+    }
+  },
+  {
+    "vertical": "b2b_saas",
+    "segment": "underutilizer",
+    "offer": "feature_unlock_trial",
+    "message": "Hi Marcus! I noticed you haven't logged into your Pro account in a while, and it looks like you're only scratching the surface of what's available to you. I'd love to offer you a 14-day trial with access to all our features so you can discover tools that might be a better fit for your workflow. If you stay with us, you'll keep full access to everything that can help streamline your work.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 4,
+      "within_length": true,
+      "char_len": 390
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message accurately uses all provided context details, appropriately addresses an underutilizer with a feature unlock trial, maintains a warm conversational tone, and follows all structural requirements including the required ending."
+    }
+  },
+  {
+    "vertical": "b2b_saas",
+    "segment": "frustrated",
+    "offer": "priority_support",
+    "message": "Hi Priya, I noticed you've been actively using our platform but have submitted several support tickets recently, which suggests you might be hitting some roadblocks. I'd love to make sure you're getting the most out of your enterprise plan and address any frustrations you're experiencing. If you stay with us, you'll get priority support with a callback within 24 hours whenever you need help.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 3,
+      "within_length": true,
+      "char_len": 394
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message accurately uses all provided facts, perfectly addresses a frustrated enterprise customer with priority support offer, maintains a warm professional tone, and follows all formatting requirements including the proper ending."
+    }
+  },
+  {
+    "vertical": "entertainment",
+    "segment": "binge_cliff",
+    "offer": "coming_soon_preview",
+    "message": "Hi Tom! We noticed you haven't been streaming much lately, and we'd love to help you rediscover what makes our platform great. As a valued subscriber, you'll get early preview access to 3 exciting upcoming releases before they're available to everyone else.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 3,
+      "within_length": true,
+      "char_len": 257
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message accurately uses all provided context details, appropriately addresses the binge_cliff segment with a coming soon preview offer, maintains a warm tone, and follows the format requirements perfectly."
+    }
+  },
+  {
+    "vertical": "entertainment",
+    "segment": "price_shopper",
+    "offer": "annual_lock_in",
+    "message": "Hi Aisha! I noticed you've been enjoying our premium content, and as someone who values great entertainment at a smart price, I wanted to share an exclusive offer just for you. You can lock in your premium plan at 17% off with annual billing, saving you $44.88 over the year while keeping all your favorite shows and premium features.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 4,
+      "within_length": true,
+      "char_len": 334
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message accurately uses all provided facts, targets the price-shopping segment effectively with savings emphasis, maintains a warm conversational tone, and follows all formatting requirements while ending with retention benefits."
+    }
+  },
+  {
+    "vertical": "lifestyle",
+    "segment": "guilt_churn",
+    "offer": "lite_plan",
+    "message": "Hi Leo, I noticed you haven't been using your fitness subscription much lately, and I completely understand how life can get in the way of our best intentions. If the annual plan feels like too much right now, I'd love to offer you our basic plan for just $10/month instead of your current $39/month. You'll still have access to all the core features to help you get back on track whenever you're ready.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 3,
+      "within_length": true,
+      "char_len": 403
+    },
+    "scores": {
+      "grounded": 4,
+      "relevant": 5,
+      "tone": 5,
+      "instruction_following": 4,
+      "rationale": "The message is well-crafted with appropriate tone and relevance, but loses points for using 'basic plan' instead of the specified 'lite_plan' offer and for being slightly longer than the 2-3 sentence requirement."
+    }
+  },
+  {
+    "vertical": "lifestyle",
+    "segment": "plateau",
+    "offer": "new_program_unlock",
+    "message": "Hi Hannah! I noticed you haven't logged in for a few days, and I wanted to reach out because I think our advanced track program could be exactly what you need to push past where you are right now. I'd love to unlock a 14-day trial of this program for you at no extra cost. If you stay with us, you'll keep access to all our programs plus this advanced track to help take your fitness to the next level.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 4,
+      "within_length": true,
+      "char_len": 402
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message accurately uses all provided facts, perfectly addresses the plateau segment with the advanced program offer, maintains a warm conversational tone, and follows all structural requirements including the ending about staying benefits."
+    }
+  },
+  {
+    "vertical": "marketplace",
+    "segment": "frequency_decay",
+    "offer": "favorites_discount",
+    "message": "Hi Sofia! I noticed you haven't been ordering as often lately, and I wanted to reach out personally to see how we can better serve you. As a valued Plus member, I'd love to offer you 20% off orders from your favorite restaurants to help you rediscover what you love about our platform. Stay with us and you'll keep enjoying all your Plus benefits along with easier access to the meals you already know and love.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 4,
+      "within_length": true,
+      "char_len": 411
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message accurately uses all provided context details, appropriately addresses the frequency decay segment with a relevant favorites discount, maintains a warm personal tone, and follows the structural requirements including ending with what the user gets if they stay."
+    }
+  },
+  {
+    "vertical": "marketplace",
+    "segment": "bad_experience",
+    "offer": "service_credit",
+    "message": "Hi Derek, I noticed you've reached out to our support team recently and I want to make sure we're taking great care of you as a Plus member. To help improve your experience, I'd like to add a $10 credit to your account that you can use toward your next order. If you stay with us, you'll keep all your Plus benefits and this credit will be waiting for you.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 3,
+      "within_length": true,
+      "char_len": 356
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message accurately uses all context details, fits the bad experience segment perfectly, maintains a warm tone, and follows all formatting instructions including the required ending."
+    }
+  },
+  {
+    "vertical": "marketplace",
+    "segment": "promo_dependent",
+    "offer": "loyalty_program",
+    "message": "Hi Maya! I noticed you've been actively using your Plus plan and logging in regularly. I'd love to invite you to our new loyalty program where you'll earn points with every order, plus get 500 bonus points just for signing up. If you stay with us, you'll keep earning rewards on all your future orders while enjoying your Plus benefits.",
+    "checks": {
+      "has_em_dash": false,
+      "sentence_count": 4,
+      "within_length": true,
+      "char_len": 336
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 4,
+      "tone": 4,
+      "instruction_following": 5,
+      "rationale": "The message invents facts about Maya's usage patterns and login activity that aren't provided in the context, but otherwise follows instructions well and maintains appropriate tone and relevance."
+    }
+  }
+]

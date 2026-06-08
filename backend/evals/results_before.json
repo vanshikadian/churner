@@ -1,0 +1,162 @@
+[
+  {
+    "vertical": "b2b_saas",
+    "segment": "price_sensitive",
+    "offer": "discount_30",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 4,
+      "tone": 4,
+      "instruction_following": 4
+    }
+  },
+  {
+    "vertical": "b2b_saas",
+    "segment": "underutilizer",
+    "offer": "feature_unlock_trial",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5
+    }
+  },
+  {
+    "vertical": "b2b_saas",
+    "segment": "frustrated",
+    "offer": "priority_support",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5
+    }
+  },
+  {
+    "vertical": "entertainment",
+    "segment": "binge_cliff",
+    "offer": "coming_soon_preview",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 5
+    }
+  },
+  {
+    "vertical": "entertainment",
+    "segment": "price_shopper",
+    "offer": "annual_lock_in",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 4,
+      "tone": 4,
+      "instruction_following": 4
+    }
+  },
+  {
+    "vertical": "lifestyle",
+    "segment": "guilt_churn",
+    "offer": "lite_plan",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 5,
+      "tone": 5,
+      "instruction_following": 4
+    }
+  },
+  {
+    "vertical": "lifestyle",
+    "segment": "plateau",
+    "offer": "new_program_unlock",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 2
+    }
+  },
+  {
+    "vertical": "marketplace",
+    "segment": "frequency_decay",
+    "offer": "favorites_discount",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 5,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 3
+    }
+  },
+  {
+    "vertical": "marketplace",
+    "segment": "bad_experience",
+    "offer": "service_credit",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 5,
+      "tone": 4,
+      "instruction_following": 3
+    }
+  },
+  {
+    "vertical": "marketplace",
+    "segment": "promo_dependent",
+    "offer": "loyalty_program",
+    "message": "(original-prompt run)",
+    "checks": {
+      "has_em_dash": false,
+      "within_length": true
+    },
+    "scores": {
+      "grounded": 2,
+      "relevant": 4,
+      "tone": 4,
+      "instruction_following": 5
+    }
+  }
+]

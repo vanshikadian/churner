@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 
 from app.config import settings
+from app.observability import init_observability
 from app.database import engine, AsyncSessionLocal
 from app.models import Base
 from app.services.scoring import load_all_models, ML_DIR
@@ -35,6 +36,9 @@ async def _auto_train_missing(redis_client):
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # Optional Arize Phoenix tracing. No-op unless PHOENIX_ENABLED=1.
+    init_observability()
+
     # Create/migrate tables
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)

@@ -1,0 +1,6 @@
+# Optional observability + eval stack for the Arize Phoenix demo.
+# Install only when you want tracing/evals: pip install -r requirements-observability.txt
+# The app runs normally without these (tracing is gated behind PHOENIX_ENABLED=1).
+arize-phoenix>=5.0.0
+openinference-instrumentation-anthropic>=0.1.6
+arize-phoenix-evals>=0.13.0
